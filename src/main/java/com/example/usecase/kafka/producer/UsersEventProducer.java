@@ -1,10 +1,7 @@
 package com.example.usecase.kafka.producer;
 
-import com.example.model.db.UnitsDao;
 import com.example.model.db.UsersDao;
 import com.example.model.kafka.data.UsersData;
-import com.example.model.kafka.event.units.UnitsEvent;
-import com.example.model.kafka.event.units.UnitsEventType;
 import com.example.model.kafka.event.users.UsersEvent;
 import com.example.model.kafka.event.users.UsersEventType;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Slf4j
@@ -66,7 +62,6 @@ public class UsersEventProducer {
                 .eventId(UUID.randomUUID().toString())
                 .eventType(eventType)
                 .data(data)
-                .timestamp(LocalDateTime.now())
                 .source("units-service")
                 .triggeredBy(triggeredBy)
                 .build();

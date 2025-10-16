@@ -21,7 +21,7 @@ public class UnitsEventConsumer {
     private final UnitsEventProcessor eventProcessor;
 
     @KafkaListener(topics = "${spring.kafka.topic.unit-events}",
-            groupId = "units-service-group")
+            groupId = "${spring.kafka.consumer.group-id}")
     public void consumeUnitsEvents(ConsumerRecord<String, String> record, Acknowledgment ack, HttpServletRequest servletRequest) {
         try {
             UnitsEvent event = objectMapper.readValue(record.value(), UnitsEvent.class);

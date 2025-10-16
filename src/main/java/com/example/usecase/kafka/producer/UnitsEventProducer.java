@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Slf4j
@@ -59,7 +58,6 @@ public class UnitsEventProducer {
                 .eventId(UUID.randomUUID().toString())
                 .eventType(eventType)
                 .data(data)
-                .timestamp(LocalDateTime.now())
                 .source("units-service")
                 .triggeredBy(triggeredBy)
                 .build();
