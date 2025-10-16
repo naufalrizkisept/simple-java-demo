@@ -180,10 +180,6 @@ build/
 /.idea/sonarlint/securityhotspotstore/a/d/add9edb2ec5421280d045df8bac22f884e012464
 /.idea/sonarlint/issuestore/a/e/aec6568f0e081e6d05d065bf2b5209e5dd89e640
 /.idea/sonarlint/securityhotspotstore/a/e/aec6568f0e081e6d05d065bf2b5209e5dd89e640
-/src/main/java/com/example/model/internal/ApiBaseResponse.java
-/src/main/resources/application.properties
-/src/main/resources/application-dev.properties
-/src/main/java/com/example/model/api/departments/AttributeDepartments.java
 /src/main/java/com/example/model/api/units/AttributeUnits.java
 /src/main/java/com/example/model/api/users/AttributeUsers.java
 /.idea/sonarlint/issuestore/b/2/b2a9cf968a69cad1971a319e21e257d41ebc8233
@@ -196,7 +192,6 @@ build/
 /.idea/sonarlint/securityhotspotstore/b/8/b81118b35fabe0ff3b9c47b1d0b9468195494b1c
 /.idea/sonarlint/issuestore/b/8/b84714704887afc92b5c2ff06e0c97ba2b910213
 /.idea/sonarlint/securityhotspotstore/b/8/b84714704887afc92b5c2ff06e0c97ba2b910213
-/src/main/java/com/example/util/Base64Util.java
 /.idea/sonarlint/issuestore/b/e/be69345e4d094712ecee77602f99853d7ae0c48f
 /.idea/sonarlint/securityhotspotstore/b/e/be69345e4d094712ecee77602f99853d7ae0c48f
 /.idea/sonarlint/issuestore/b/e/beca3ca9af896d54b4ad2eb9f51927a6bc034764
