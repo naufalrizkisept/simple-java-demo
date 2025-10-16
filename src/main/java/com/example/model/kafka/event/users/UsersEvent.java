@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,7 +14,6 @@ public class UsersEvent {
     private String eventId;
     private UsersEventType eventType;
     private UsersData data;
-    private LocalDateTime timestamp;
     private String source;
     private String triggeredBy;
 }

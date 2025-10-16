@@ -50,8 +50,6 @@ public class DepartmentsEventProducer {
                 .code(department.getCode())
                 .name(department.getName())
                 .key(department.getKey())
-                .createdAt(department.getCreatedAt())
-                .updatedAt(department.getUpdatedAt())
                 .build();
 
         return DepartmentsEvent.builder()

@@ -5,7 +5,6 @@ import com.example.model.kafka.event.departments.DepartmentsEvent;
 import com.example.usecase.kafka.processor.DepartmentsEventProcessor;
 import com.example.util.MetadataUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -22,13 +21,13 @@ public class DepartmentsEventConsumer {
 
     @KafkaListener(topics = "${spring.kafka.topic.department-events}",
             groupId = "${spring.kafka.consumer.group-id}")
-    public void consumeDepartmentEvents(ConsumerRecord<String, String> record, Acknowledgment ack, HttpServletRequest servletRequest) {
+    public void consumeDepartmentEvents(ConsumerRecord<String, String> record, Acknowledgment ack) {
         try {
             DepartmentsEvent event = objectMapper.readValue(record.value(), DepartmentsEvent.class);
             log.info("Received department event: {} for code: {}",
                     event.getEventType(), event.getData().getCode());
 
-            Metadata metadata = MetadataUtil.constructMetadata(servletRequest);
+            Metadata metadata = MetadataUtil.extractMetadataFromKafkaHeaders(record.headers());
             processEvent(event, metadata);
             ack.acknowledge();
 

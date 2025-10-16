@@ -5,7 +5,6 @@ import com.example.model.kafka.event.units.UnitsEvent;
 import com.example.usecase.kafka.processor.UnitsEventProcessor;
 import com.example.util.MetadataUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -22,13 +21,13 @@ public class UnitsEventConsumer {
 
     @KafkaListener(topics = "${spring.kafka.topic.unit-events}",
             groupId = "${spring.kafka.consumer.group-id}")
-    public void consumeUnitsEvents(ConsumerRecord<String, String> record, Acknowledgment ack, HttpServletRequest servletRequest) {
+    public void consumeUnitsEvents(ConsumerRecord<String, String> record, Acknowledgment ack) {
         try {
             UnitsEvent event = objectMapper.readValue(record.value(), UnitsEvent.class);
             log.info("Received unit event: {} for ID: {}",
                     event.getEventType(), event.getData().getId());
 
-            Metadata metadata = MetadataUtil.constructMetadata(servletRequest);
+            Metadata metadata = MetadataUtil.extractMetadataFromKafkaHeaders(record.headers());
             processEvent(event, metadata);
             ack.acknowledge();
 

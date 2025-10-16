@@ -42,7 +42,7 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_NUM_PARTITIONS: 3
     ports:
-      - "9094:9092"
+      - "9094:9094"
     volumes:
       - kafkaData:/var/lib/kafka
     restart: unless-stopped

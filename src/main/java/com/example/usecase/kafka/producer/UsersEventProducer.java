@@ -54,8 +54,6 @@ public class UsersEventProducer {
                 .isActive(user.isActive())
                 .isDeleted(user.isDeleted())
                 .sendMail(user.isSendMail())
-                .createdAt(user.getCreatedAt())
-                .updatedAt(user.getUpdatedAt())
                 .build();
 
         return UsersEvent.builder()
