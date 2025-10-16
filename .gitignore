@@ -180,8 +180,6 @@ build/
 /.idea/sonarlint/securityhotspotstore/a/d/add9edb2ec5421280d045df8bac22f884e012464
 /.idea/sonarlint/issuestore/a/e/aec6568f0e081e6d05d065bf2b5209e5dd89e640
 /.idea/sonarlint/securityhotspotstore/a/e/aec6568f0e081e6d05d065bf2b5209e5dd89e640
-/src/main/java/com/example/model/api/units/AttributeUnits.java
-/src/main/java/com/example/model/api/users/AttributeUsers.java
 /.idea/sonarlint/issuestore/b/2/b2a9cf968a69cad1971a319e21e257d41ebc8233
 /.idea/sonarlint/securityhotspotstore/b/2/b2a9cf968a69cad1971a319e21e257d41ebc8233
 /.idea/sonarlint/issuestore/b/8/b87a3efcc22ae4e3ae304351f595b8a44e30c95c
